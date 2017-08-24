@@ -22,8 +22,5 @@ Gem::Specification.new do |spec|
 
 
   spec.add_dependency 'capistrano', '~> 3.6'
-   spec.post_install_message = %q{
-    Thank you for using capistrano-linuxpl
-    visit README.md to see further installation instructions
-  }
+  spec.add_development_dependency 'rake'
 end

@@ -1,3 +1,7 @@
+# encoding: utf-8
+
+require 'capistrano'
+
 task :precompile_assets do
   run_locally do
     execute(:rm, "-rf public/assets/*")

@@ -1,4 +1,7 @@
+# encoding: utf-8
 require 'pry'
+require 'capistrano'
+
 namespace :deploy do
   task :stop_server do
     on roles(:all) do |_host|

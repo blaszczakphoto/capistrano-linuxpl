@@ -25,6 +25,10 @@ And then execute:
     before :deploy, :precompile_assets
 ```
 
+## Deploy changes to gem
+gem build
+gem push
+
 ## Contributing
 
 1. Fork it

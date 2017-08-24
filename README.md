@@ -16,30 +16,14 @@ And then execute:
     # Capfile
 
     require 'capistrano/linuxpl'
-    install_plugin Capistrano::Puma  # Default puma tasks
-    install_plugin Capistrano::Puma::Workers  # if you want to control the workers (in cluster mode)
 ```
 
-To prevent loading the hooks of the plugin, add false to the load_hooks param.
 ```ruby
-    # Capfile
+    # deploy.rb
 
-    require 'capistrano/puma'
-    install_plugin Capistrano::Puma, load_hooks: false  # Default puma tasks without hooks
-    install_plugin Capistrano::Puma::Monit, load_hooks: false  # Monit tasks without hooks
+    after 'deploy:log_revision', 'deploy:restart_server'
+    before :deploy, :precompile_assets
 ```
-
-### Config
-
-To list available tasks use `cap -T`
-
-To upload puma config use:
-```ruby
-cap production puma:config
-```
-By default the file located in  `shared/puma.config`
-
-
 
 ## Contributing
 

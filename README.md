@@ -23,6 +23,8 @@ And then execute:
 
     after 'deploy:log_revision', 'deploy:restart_server'
     before :deploy, :precompile_assets
+    after 'deploy:restart_server', 'clean_assets'
+
 ```
 
 ## Deploy changes to gem

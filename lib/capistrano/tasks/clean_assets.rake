@@ -7,6 +7,7 @@ task :clean_assets do
     execute(:rm, "-rf public/assets/*")
     execute(:rm, "-rf public/assets/.sprockets-manifest*")
     execute(:rm, "-rf public/webpack/production/*")
-    execute('git add . && git commit -m "clean assets after deployment" && git push')
+    execute('git add . && git commit -m "clean assets after deployment"')
+    execute("git push origin #{fetch(:branch)}")
   end
 end

@@ -41,6 +41,6 @@ gem push
 
 
 ## Using temporary local version of gem
-    bundle config local.capistrano-linuxpl /home/mariusz/Projects/Ruby/capistrano-linuxpl
+    gem "capistrano-linuxpl", path: "/home/mariusz/Projects/Ruby/capistrano-linuxpl"
     bundle install
     

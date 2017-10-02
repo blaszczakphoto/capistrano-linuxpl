@@ -27,7 +27,8 @@ namespace :deploy do
     on roles(:all) do |_host|
       within(fetch(:deploy_to)) do
         within('current') do
-          execute(:bundle, :exec, :ruby, "bin/rails server webrick -e production -p #{fetch(:web_server_port)} -d")
+          stage = fetch(:stage, "production")
+          execute(:bundle, :exec, :ruby, "bin/rails server webrick -e #{stage} -p #{fetch(:web_server_port)} -d")
         end
       end
     end

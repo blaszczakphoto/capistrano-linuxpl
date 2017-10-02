@@ -28,8 +28,8 @@ And then execute:
 ```
 
 ## Deploy changes to gem
-gem build
-gem push
+    gem build capistrano-linuxpl.gemspec 
+    gem push
 
 ## Contributing
 
